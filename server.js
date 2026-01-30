@@ -28,6 +28,12 @@ app.post('/send-email', async (req, res) => {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
     },
+    // 以下の3行を追加：接続が切れないようにする魔法のオプション
+    tls: {
+      rejectUnauthorized: false,
+    },
+    connectionTimeout: 10000, // 10秒待つ
+    greetingTimeout: 10000,
   });
 
   const mailOptions = {
