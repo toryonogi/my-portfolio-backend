@@ -1,56 +1,32 @@
 const express = require('express');
-const nodemailer = require('nodemailer');
+const { Resend } = require('resend'); // resendに変更
 const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
+const resend = new Resend(process.env.RESEND_API_KEY); // APIキーを使用
+
 app.use(cors());
 app.use(express.json());
 
 app.post('/send-email', async (req, res) => {
-  console.log('--- 送信リクエストを受信しました ---');
   const { name, email, message } = req.body;
 
-  const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 587,
-    secure: false, // 587番の場合はここをfalseにします
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
-    },
-    tls: {
-      // これを入れることで、STARTTLSを強制し、かつ接続を安定させます
-      rejectUnauthorized: false,
-      minVersion: 'TLSv1.2',
-    },
-    connectionTimeout: 20000,
-    greetingTimeout: 20000,
-  });
-
-  const mailOptions = {
-    from: process.env.EMAIL_USER,
-    to: process.env.EMAIL_USER, // 自分宛に届く
-    subject: `【ポートフォリオ】${name}様よりお問い合わせ`,
-    text: `お名前: ${name}\nメールアドレス: ${email}\n\n内容:\n${message}`,
-  };
-
   try {
-    console.log('メール送信を開始します...');
-    // 実際に送信を待機
-    const info = await transporter.sendMail(mailOptions);
-    console.log('メール送信に成功しました！ ID:', info.messageId);
-    res.status(200).json({ success: true, message: '送信完了' });
+    console.log('Resendでメール送信を開始します...');
+    const data = await resend.emails.send({
+      from: 'onboarding@resend.dev', // 最初はこのまま
+      to: process.env.EMAIL_USER, // あなたのGmail
+      subject: `【ポートフォリオ】${name}様より`,
+      text: `名前: ${name}\nメアド: ${email}\n内容: ${message}`,
+    });
+
+    console.log('送信成功:', data);
+    res.status(200).json({ success: true });
   } catch (error) {
-    // エラー内容を詳しくログに出す
-    console.error('!!! 送信エラー詳細 !!!');
-    console.error('エラーコード:', error.code);
-    console.error('メッセージ:', error.message);
+    console.error('送信エラー:', error);
     res.status(500).json({ success: false, error: error.message });
   }
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+app.listen(process.env.PORT || 3000);
