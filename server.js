@@ -12,20 +12,20 @@ app.post('/send-email', async (req, res) => {
   const { name, email, message } = req.body;
 
   const transporter = nodemailer.createTransport({
-    // service: 'gmail' は使わず、直接ホストを指定します
     host: 'smtp.gmail.com',
-    port: 465,
-    secure: true, // 465番ポートなので必ずtrue
+    port: 587,
+    secure: false, // 587番の場合はここをfalseにします
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
     },
-    // 接続を安定させるための設定
-    connectionTimeout: 20000, // 20秒まで待つ
+    tls: {
+      // これを入れることで、STARTTLSを強制し、かつ接続を安定させます
+      rejectUnauthorized: false,
+      minVersion: 'TLSv1.2',
+    },
+    connectionTimeout: 20000,
     greetingTimeout: 20000,
-    socketTimeout: 20000,
-    debug: true, // ログに詳細な通信内容を出す
-    logger: true, // Nodemailer自体の動きをログに出す
   });
 
   const mailOptions = {
