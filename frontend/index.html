@@ -7,6 +7,10 @@
 
     <link rel="stylesheet" href="./assets/base.css" />
     <link rel="stylesheet" href="./assets/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <script src="./script.js" defer></script>
   </head>
   <body class="bg-gray-50 text-gray-800 font-sans">
@@ -14,7 +18,7 @@
       <div
         class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center"
       >
-        <div class="text-xl font-bold tracking-tighter">MY PORTFOLIO</div>
+        <div class="text-xl font-bold tracking-tighter">SATOSHIO</div>
         <div class="space-x-6 text-sm font-medium">
           <a href="#about" class="hover:text-blue-600 transition">About</a>
           <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
@@ -34,9 +38,7 @@
             class="w-full h-full object-cover"
           />
         </div>
-        <h1 class="text-4xl font-extrabold mb-4">
-          こんにちは、[あなたの名前]です。
-        </h1>
+        <h1 class="text-4xl font-extrabold mb-4">こんにちは、千葉です。</h1>
         <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
           ここにあなたの自己紹介文を記載します。これまでの経歴や、大切にしている価値観、現在取り組んでいることなどを自由に書いてみてください。
         </p>
@@ -50,8 +52,12 @@
           <div
             class="p-6 border border-gray-100 rounded-2xl bg-gray-50 hover:shadow-lg transition"
           >
-            <div class="text-blue-600 mb-4 text-3xl">🎨</div>
-            <h3 class="font-bold mb-2">Design</h3>
+            <div class="text-blue-600 mb-4 text-3xl">
+              <div class="mb-6 lg:mb-0 self-center">
+                <i class="fa-brands fa-html5 text-9xl text-orange-400"></i>
+              </div>
+            </div>
+            <h3 class="font-bold mb-2">HTML/CSS</h3>
             <p class="text-sm text-gray-600">
               UI/UXデザイン、Figmaを使用したプロトタイプ制作が可能です。
             </p>
@@ -75,53 +81,6 @@
             </p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section id="contact" class="py-20 px-6">
-      <div class="max-w-xl mx-auto">
-        <h2 class="text-2xl font-bold mb-8 text-center">Contact</h2>
-        <form class="space-y-4">
-          <div>
-            <label class="block text-sm font-medium mb-1">お名前</label>
-            <input
-              type="text"
-              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-            />
-          </div>
-          <div>
-            <label class="block text-sm font-medium mb-1">メールアドレス</label>
-            <input
-              type="email"
-              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-            />
-          </div>
-          <div>
-            <label class="block text-sm font-medium mb-1">メッセージ</label>
-            <textarea
-              rows="4"
-              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-            ></textarea>
-          </div>
-          <button
-            class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition"
-          >
-            送信する
-          </button>
-        </form>
-
-        <form action="https://formspree.io/f/xeekpvok" method="POST">
-          <label>
-            Your email:
-            <input type="email" name="email" />
-          </label>
-          <label>
-            Your message:
-            <textarea name="message"></textarea>
-          </label>
-          <!-- your other form fields go here -->
-          <button type="submit">Send</button>
-        </form>
       </div>
     </section>
 
@@ -167,7 +126,7 @@
     </section>
 
     <footer class="py-10 text-center text-gray-400 text-sm">
-      &copy; 2026 [Your Name]. All rights reserved.
+      &copy; 2026 satoshio.net All rights reserved.
     </footer>
   </body>
 </html>
