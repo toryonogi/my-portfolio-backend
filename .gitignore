@@ -18,3 +18,5 @@ Thumbs.db
 
 # ビルド成果物 (必要に応じて)
 dist/
+
+.vscode/sftp.json
