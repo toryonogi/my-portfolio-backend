@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+
+    <link rel="stylesheet" href="./assets/base.css" />
+    <link rel="stylesheet" href="./assets/output.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800 font-sans">
+    <nav class="fixed w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
+      <div
+        class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div class="text-xl font-bold tracking-tighter">MY PORTFOLIO</div>
+        <div class="space-x-6 text-sm font-medium">
+          <a href="#about" class="hover:text-blue-600 transition">About</a>
+          <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
+          <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <section id="about" class="pt-32 pb-20 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <div
+          class="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-6 overflow-hidden"
+        >
+          <img
+            src="https://via.placeholder.com/150"
+            alt="Profile"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <h1 class="text-4xl font-extrabold mb-4">
+          こんにちは、[あなたの名前]です。
+        </h1>
+        <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+          ここにあなたの自己紹介文を記載します。これまでの経歴や、大切にしている価値観、現在取り組んでいることなどを自由に書いてみてください。
+        </p>
+      </div>
+    </section>
+
+    <section id="skills" class="py-20 bg-white px-6">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl font-bold mb-12 text-center">Skills</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="p-6 border border-gray-100 rounded-2xl bg-gray-50 hover:shadow-lg transition"
+          >
+            <div class="text-blue-600 mb-4 text-3xl">🎨</div>
+            <h3 class="font-bold mb-2">Design</h3>
+            <p class="text-sm text-gray-600">
+              UI/UXデザイン、Figmaを使用したプロトタイプ制作が可能です。
+            </p>
+          </div>
+          <div
+            class="p-6 border border-gray-100 rounded-2xl bg-gray-50 hover:shadow-lg transition"
+          >
+            <div class="text-blue-600 mb-4 text-3xl">💻</div>
+            <h3 class="font-bold mb-2">Frontend</h3>
+            <p class="text-sm text-gray-600">
+              HTML, CSS, JavaScript(React/Next.js)を用いた開発が得意です。
+            </p>
+          </div>
+          <div
+            class="p-6 border border-gray-100 rounded-2xl bg-gray-50 hover:shadow-lg transition"
+          >
+            <div class="text-blue-600 mb-4 text-3xl">🚀</div>
+            <h3 class="font-bold mb-2">Others</h3>
+            <p class="text-sm text-gray-600">
+              プロジェクト管理、Webマーケティング、動画編集など。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-20 px-6">
+      <div class="max-w-xl mx-auto">
+        <h2 class="text-2xl font-bold mb-8 text-center">Contact</h2>
+        <form class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium mb-1">お名前</label>
+            <input
+              type="text"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">メールアドレス</label>
+            <input
+              type="email"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">メッセージ</label>
+            <textarea
+              rows="4"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+            ></textarea>
+          </div>
+          <button
+            class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition"
+          >
+            送信する
+          </button>
+        </form>
+
+        <form action="https://formspree.io/f/xeekpvok" method="POST">
+          <label>
+            Your email:
+            <input type="email" name="email" />
+          </label>
+          <label>
+            Your message:
+            <textarea name="message"></textarea>
+          </label>
+          <!-- your other form fields go here -->
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="contact" class="py-20 px-6">
+      <div class="max-w-xl mx-auto">
+        <h2 class="text-2xl font-bold mb-8 text-center">Contact</h2>
+        <form id="contact-form" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium mb-1">お名前</label>
+            <input
+              type="text"
+              name="name"
+              required
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">メールアドレス</label>
+            <input
+              type="email"
+              name="email"
+              required
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">メッセージ</label>
+            <textarea
+              name="message"
+              rows="4"
+              required
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition"
+          >
+            送信する
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="py-10 text-center text-gray-400 text-sm">
+      &copy; 2026 [Your Name]. All rights reserved.
+    </footer>
+  </body>
+</html>
