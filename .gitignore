@@ -1,0 +1,13 @@
+# === 開発用（サーバーに不要）===
+package.json
+package-lock.json
+tailwind.config.js
+postcss.config.js
+src/
+
+# === Node / build系 ===
+node_modules/
+
+# === その他 ===
+*.log
+.DS_Store
