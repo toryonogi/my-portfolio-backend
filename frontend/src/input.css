@@ -6,3 +6,9 @@
 html {
   scroll-behavior: smooth;
 }
+
+.notice {
+  @apply rounded-lg border border-amber-200 bg-amber-50
+         px-5 py-4 text-sm text-amber-900
+         leading-relaxed;
+}

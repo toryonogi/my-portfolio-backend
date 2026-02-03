@@ -2,13 +2,27 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
+    <title>札幌のホームページ制作・Webサイト制作｜Satoshio</title>
+    <meta name="description" content="北海道札幌市を拠点に、個人でWebサイト制作を行っています。丁寧なヒアリングをもとに、事業の強みを整理し、成長を支えるWebサイトを制作します。" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="format-detection" content="telephone=no,email=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>Satoshio</title>
-
+    <!-- Favicon -->
     <link rel="icon" href="./assets/favicon-96x96.png" sizes="any" />
+
+    <!-- Open Graph Protocol -->
+    <meta property="og:title" content="Webサイト制作・運営管理｜satoshio" />
+    <meta property="og:description" content="札幌を拠点にWebサイト制作・運営管理を行っています。基礎を大切に、仕組みを丁寧に育てる制作を行っています。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://satoshio.net/" />
+    <meta property="og:image" content="https://satoshio.net/assets/ogp.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Webサイト制作・運営管理｜satoshio" />
+    <meta name="twitter:description" content="札幌拠点のWeb制作者。仕組みを育てるWebサイト制作を行っています。" />
+    <meta name="twitter:image" content="https://satoshio.net/assets/ogp.png" />
+
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <link rel="stylesheet" href="./assets/base.css" />
@@ -30,17 +44,26 @@
     </nav>
 
     <section id="about" class="pt-32 pb-20 px-6">
-      <div class="max-w-4xl mx-auto text-center">
+      <div class="max-w-4xl mx-auto text-left">
         <div class="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-6 overflow-hidden">
-          <img src="./assets/profile.jpg" alt="Profile" class="w-full h-full object-cover" />
+          <img src="./assets/profile_3.jpeg" alt="Profile" class="w-full h-full object-cover" />
         </div>
-        <h1 class="text-4xl font-extrabold mb-4">こんにちは、千葉です。</h1>
-        <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
-          Webサイト制作・運営管理を中心に活動しています。季節労働や単発の仕事を組み合わせながら、自分の手で仕組みをつくり、育てていく働き方を続けてきました。
-          HTML・CSS・JavaScript・PHP・Pythonを用いたWeb制作をはじめ、サーバー設定、ドメイン管理、公開後の運用サポートまで一通り対応しています。一人で黙々と作業することが得意で、丁寧に積み上げていくスタイルを大切にしています。
-          小中学校の基礎学習を十分に理解しないまま大人になった経験から、基礎に立ち返って学び直す姿勢を重視しています。分からないことを曖昧にせず、調べ、試し、理解することを繰り返してきました。
-          自然や散策、ものづくりが好きで、都市生活の中でも食・電気・DIYなどの分野に関心を持ち、日々学びと実践を続けています。
-        </p>
+        <h1 class="text-4xl font-extrabold mb-4 text-center">こんにちは、satoshioです。</h1>
+        <div class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+          <div class="notice mb-8 text-center">
+            <p class="font-medium">現在は新規のご依頼を受け付けておりません。</p>
+            <p>現在、サイトをリニューアル中です。</p>
+            <p>より分かりやすい内容にするため、順次更新を行っています。</p>
+          </div>
+          <article>
+            <p>Webサイト制作・運営管理を中心に活動しています。 現在は札幌を拠点に、これまで培ってきた経験を生かしながら、制作および運用に取り組んでいます。</p>
+            <p>これまで、旅をしながら仕事をするデジタルノマド的な働き方を経験し、場所に縛られず、自分の手で仕組みをつくり、育てていくスタイルを続けてきました。</p>
+            <p>その過程で、農業や漁業といった一次産業の現場にも関わり、身体を動かす仕事と、仕組みを整える仕事の両方を経験しています。</p>
+            <p>HTML・CSS・JavaScript・PHP・Pythonを用いたWeb制作をはじめ、サーバー設定、ドメイン管理、公開後の運用サポートまで一通り対応しています。</p>
+            <p>一人で黙々と作業することが得意で、細部を確認しながら、時間をかけて丁寧に積み上げていく制作スタイルを大切にしています。 分からないことを曖昧にせず、調べ、試し、理解する。</p>
+            <p>この積み重ねを、制作や運用の現場においても重視してきました。 自然や散策、ものづくりが好きで、都市生活の中でも食・電気・DIYといった分野に関心を持ち、日々学びと実践を続けています。</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -52,17 +75,18 @@
             <div class="flex justify-center items-center mt-6 mb-6 h-24">
               <i class="fa-brands fa-html5 text-9xl text-orange-400"></i>
             </div>
-            <h3 class="font-bold mb-2">HTML/CSS</h3>
-            <p class="text-sm text-gray-600">
-              HTML/CSSを用いた、保守性の高いコーディングが得意です。単にデザインを再現するだけでなく、BEM等の設計手法を用いた構造的なCSS設計や、レスポンシブ対応を完遂できます。また、環境変数による設定管理やネットワーク層の知識を活かし、バックエンドとの連携を意識した実装が可能です。ログから問題を特定するデバッグ力を武器に、ブラウザ間の差異や表示崩れにも迅速かつ論理的に対処し、安定したUIを提供します。
+            <h3 class="font-bold mb-2 text-center">HTML/CSS</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              HTML/CSSを用いた、保守性の高いコーディングが得意です。単にデザインを再現するだけでなく、Tailwind
+              CSSを用いたユーティリティファーストな設計により、保守性と実装速度を両立したコーディングや、レスポンシブ対応を完遂できます。また、環境変数による設定管理やネットワーク層の知識を活かし、バックエンドとの連携を意識した実装が可能です。ログから問題を特定するデバッグ力を武器に、ブラウザ間の差異や表示崩れにも迅速かつ論理的に対処し、安定したUIを提供します。
             </p>
           </div>
           <div class="p-6 border border-gray-100 rounded-2xl bg-gray-50 hover:shadow-lg transition">
             <div class="flex justify-center items-center mt-6 mb-6 h-24">
               <i class="fa-brands fa-js-square text-9xl text-yellow-300"></i>
             </div>
-            <h3 class="font-bold mb-2">JavaScript</h3>
-            <p class="text-sm text-gray-600">
+            <h3 class="font-bold mb-2 text-center">JavaScript</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
               JavaScriptを用いた動的なフロントエンド開発に加え、Node.js環境でのサーバーサイド実装も可能です。API連携時の非同期処理（Async/Await）やエラーハンドリングに精通しており、ETIMEDOUT等のログから原因を特定する深いデバッグ力を備えています。また、環境変数による機密情報の管理やTLS設定など、セキュリティとネットワークを意識した「堅牢なコード」が書けることが、エンジニアとしての最大の強みです。
             </p>
           </div>
@@ -70,9 +94,11 @@
             <div class="flex justify-center items-center mt-6 mb-6 h-24">
               <i class="fa-brands fa-python text-9xl text-blue-600"></i>
             </div>
-            <h3 class="font-bold mb-2">Python</h3>
-            <p class="text-sm text-gray-600">
-              Pythonを用いた業務効率化やサーバーサイド開発が得意です。ライブラリを駆使したデータ処理に加え、外部APIとの連携やスクレイピング実装の実績があります。特筆すべきは「動かす力」で、環境変数による秘匿情報の管理や、接続エラー時のログ解析、タイムアウト設定の最適化など、ネットワーク層を意識した堅牢な実装が可能です。現場のトラブルに動じず、論理的なデバッグで安定したシステムを構築・運用できます。
+            <h3 class="font-bold mb-2 text-center">Python</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Pythonを用いた業務効率化やサーバーサイド開発を得意としています。 ライブラリを活用したデータ処理に加え、外部APIとの連携やスクレイピングの実装実績があります。
+              また、自動キャプチャ後にPDFを生成するアプリケーションを開発した経験があります。
+              ページ終端の自動検出やページ送りの検出ロジックを実装し、手作業を介さずに一連の処理を完結させる仕組みを構築しました。
             </p>
           </div>
         </div>
