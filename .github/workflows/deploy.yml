@@ -19,9 +19,9 @@ jobs:
       - name: Deploy to Xserver
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          server: ${{ secrets.sv16480.xserver.jp }}    # FTPサーバ
-          username: ${{ secrets.xs089118 }}  # FTPユーザー
-          password: ${{ secrets.og107x71 }}  # FTPパスワード
+          server: ${{ secrets.XSERVER_HOST }}    # FTPサーバ
+          username: ${{ secrets.XSERVER_USER }}  # FTPユーザー
+          password: ${{ secrets.XSERVER_PASS }}  # FTPパスワード
           protocol: ftp                          # サーバに合わせて ftp / ftps / sftp
           local-dir: ./                           # リポジトリのルートをアップロード
           server-dir: /public_html                # 公開ディレクトリ
