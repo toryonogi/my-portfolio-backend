@@ -1,0 +1,28 @@
+name: Deploy to Xserver
+
+# main ブランチに push されたら実行
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # リポジトリの内容をチェックアウト
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # FTP/SFTPでサーバにアップロード
+      - name: Deploy to Xserver
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.sv16480.xserver.jp }}    # FTPサーバ
+          username: ${{ secrets.xs089118 }}  # FTPユーザー
+          password: ${{ secrets.og107x71 }}  # FTPパスワード
+          protocol: ftp                          # サーバに合わせて ftp / ftps / sftp
+          local-dir: ./                           # リポジトリのルートをアップロード
+          server-dir: /public_html                # 公開ディレクトリ
+          git-ftp-args: --insecure                # SSL証明書が怪しい場合のオプション
