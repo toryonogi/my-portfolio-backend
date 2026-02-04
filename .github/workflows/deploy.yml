@@ -24,5 +24,5 @@ jobs:
           password: ${{ secrets.XSERVER_PASS }}  # FTPパスワード
           protocol: ftp                          # サーバに合わせて ftp / ftps / sftp
           local-dir: ./                           # リポジトリのルートをアップロード
-          server-dir: /public_html                # 公開ディレクトリ
+          server-dir: /public_html/                # 公開ディレクトリ
           git-ftp-args: --insecure                # SSL証明書が怪しい場合のオプション
