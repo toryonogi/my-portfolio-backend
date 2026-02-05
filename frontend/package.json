@@ -1,13 +1,21 @@
 {
   "devDependencies": {
+    "autoprefixer": "^10.4.24",
+    "browser-sync": "^3.0.4",
+    "cpy-cli": "^6.0.0",
+    "postcss": "^8.5.6",
     "tailwindcss": "^3.4.19"
   },
   "name": "web",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx tailwindcss -i ./src/input.css -o ./assets/output.css --watch"
+    "build:css": "tailwindcss -i ./src/css/input.css -o ./dist/assets/css/output.css",
+    "copy:html": "cp ./src/index.html ./dist/index.html",
+    "copy:assets": "cp -R ./src/js ./src/img ./dist/assets",
+    "build": "npm run build:css && npm run copy:html && npm run copy:assets",
+    "dev": "tailwindcss -i ./src/css/input.css -o ./dist/assets/css/output.css --watch",
+    "serve": "browser-sync start --server 'dist' --files 'dist/**/*'"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +23,6 @@
   "description": "",
   "type": "commonjs",
   "dependencies": {
-    "@tailwindcss/cli": "^4.1.18",
     "body-parser": "^2.2.2",
     "cors": "^2.8.6",
     "express": "^5.2.1",
