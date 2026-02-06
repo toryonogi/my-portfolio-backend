@@ -10,26 +10,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # ① リポジトリを取得
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # ② Node.js セットアップ
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
 
-      # ③ 依存関係インストール
       - name: Install dependencies
         run: npm ci
 
-      # ④ ビルド（dist生成）
       - name: Build
         run: npm run build
 
-      # ⑤ XserverへFTPデプロイ
       - name: Deploy to Xserver
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
