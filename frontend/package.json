@@ -14,6 +14,7 @@
   "scripts": {
     "dev:css": "tailwindcss -i ./src/css/input.css -o ./dist/assets/css/output.css --watch",
     "dev:copy": "onchange \"src/**/*.html\" \"src/js/**/*.js\" \"src/img/**/*\" -- cp ./src/index.html ./dist/index.html && cp -R ./src/js ./src/img ./dist/assets",
+    "build": "npm run build:css && npm run copy:html && npm run copy:assets",
     "serve": "browser-sync start --server \"dist\" --files \"dist/**/*\"",
     "dev": "npm-run-all --parallel dev:css dev:copy serve"
   },
