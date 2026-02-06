@@ -1,28 +1,40 @@
 name: Deploy to Xserver
 
-# main ブランチに push されたら実行
 on:
   push:
     branches:
       - main
 
 jobs:
-  ftp-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # リポジトリの内容をチェックアウト
+      # ① リポジトリを取得
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      # FTP/SFTPでサーバにアップロード
+      # ② Node.js セットアップ
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      # ③ 依存関係インストール
+      - name: Install dependencies
+        run: npm ci
+
+      # ④ ビルド（dist生成）
+      - name: Build
+        run: npm run build
+
+      # ⑤ XserverへFTPデプロイ
       - name: Deploy to Xserver
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.XSERVER_HOST }}    # FTPサーバ
           username: ${{ secrets.XSERVER_USER }}  # FTPユーザー
           password: ${{ secrets.XSERVER_PASS }}  # FTPパスワード
-          protocol: ftp                          # サーバに合わせて ftp / ftps / sftp
-          local-dir: ./                           # リポジトリのルートをアップロード
-          server-dir: /public_html/                # 公開ディレクトリ
-          git-ftp-args: --insecure                # SSL証明書が怪しい場合のオプション
+          local-dir: dist/
+          server-dir: /satoshio.net/public_html2/
