@@ -1,0 +1,12 @@
+# Node modules
+node_modules/
+
+# Environment variables (重要：絶対に公開しない)
+.env
+
+# Runtime logs
+logs/
+*.log
+
+# OS files
+.DS_Store
