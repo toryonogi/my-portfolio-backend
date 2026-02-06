@@ -22,6 +22,7 @@ jobs:
           username: ${{ secrets.XSERVER_USER }}
           password: ${{ secrets.XSERVER_PASS }}
           local-dir: frontend/dist/
-          server-dir: /satoshio.net/public_html2/
-
-          dry-run: false # テスト時はtrueにすると実際には送らずログだけ見れます
+          # ↓ サーバー側のパスの冒頭を「./」に、最後を「/」なしにしてみる
+          server-dir: ./satoshio.net/public_html2
+          # ↓ 何が起きているか詳細に見るための設定を追加
+          log-level: verbose
