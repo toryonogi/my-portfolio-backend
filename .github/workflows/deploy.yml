@@ -24,5 +24,4 @@ jobs:
           local-dir: frontend/dist/
           server-dir: /satoshio.net/public_html2/
 
-          delete-destination: false # サーバー側の既存ファイルを消したくない場合はfalse
           dry-run: false # テスト時はtrueにすると実際には送らずログだけ見れます
