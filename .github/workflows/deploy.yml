@@ -23,6 +23,6 @@ jobs:
           password: ${{ secrets.XSERVER_PASS }}
           local-dir: frontend/dist/
           # ↓ サーバー側のパスの冒頭を「./」に、最後を「/」なしにしてみる
-          server-dir: ./satoshio.net/public_html2
+          server-dir: ./satoshio.net/public_html2/
           # ↓ 何が起きているか詳細に見るための設定を追加
           log-level: verbose
