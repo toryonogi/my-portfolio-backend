@@ -18,7 +18,7 @@ yarn-error.log*
 Thumbs.db
 
 # ビルド成果物 (必要に応じて)
-dist/
+#dist/
 
 .vscode/sftp.json
 =======
