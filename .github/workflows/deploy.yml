@@ -14,15 +14,26 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # ⑤ XserverへFTPデプロイ
+      # ② Node.jsのセットアップ（ビルドに必要）
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20" # あなたの環境に合わせて調整
+
+      # ③ frontendディレクトリ内でインストールとビルドをまとめて実行
+      - name: Install and Build
+        run: |
+          npm --prefix frontend install
+          npm --prefix frontend run build
+
+      # ④ ビルド結果をデプロイ
       - name: Deploy to Xserver
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.XSERVER_HOST }}
           username: ${{ secrets.XSERVER_USER }}
           password: ${{ secrets.XSERVER_PASS }}
-          local-dir: frontend/dist/
-          # ↓ サーバー側のパスの冒頭を「./」に、最後を「/」なしにしてみる
+          # ルートから見たパスを明示的に指定
+          local-dir: ./frontend/dist/
           server-dir: /satoshio.net/public_html5/
-          # ↓ 何が起きているか詳細に見るための設定を追加
           log-level: verbose
