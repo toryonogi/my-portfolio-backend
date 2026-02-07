@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./src/**/*.html", "./src/**/*.js"],
+export default {
+  // 1. 探索範囲に index.html を追加し、srcの中も広く指定する
+  content: ["./index.html", "./src/**/*.{html,js,ts,jsx,tsx}"],
   theme: {
     extend: {},
   },

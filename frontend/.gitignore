@@ -2,7 +2,7 @@
 node_modules/
 
 # Build outputs (あえて無視しない設定)
-# dist/  ← ここをコメントアウト、または削除
+dist/
 
 # Environment variables
 .env

@@ -1,37 +1,16 @@
 {
+  "name": "web-frontend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
   "devDependencies": {
     "autoprefixer": "^10.4.24",
-    "browser-sync": "^3.0.4",
-    "cpy-cli": "^6.0.0",
-    "npm-run-all": "^4.1.5",
-    "onchange": "^7.1.0",
     "postcss": "^8.5.6",
-    "postcss-cli": "^11.0.1",
-    "tailwindcss": "^3.4.19"
-  },
-  "name": "web",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "build:css": "postcss ./src/css/input.css -o ./dist/assets/css/output.css",
-    "copy:html": "cp ./src/index.html ./dist/index.html",
-    "copy:assets": "cp -R ./src/js ./src/img ./dist/assets",
-    "build": "npm run build:css && npm run copy:html && npm run copy:assets",
-    "dev:css": "npm run build:css -- --watch",
-    "dev:copy": "onchange \"src/**/*.html\" \"src/js/**/*.js\" \"src/img/**/*\" -- npm run build",
-    "serve": "browser-sync start --server \"dist\" --files \"dist/**/*\"",
-    "dev": "npm-run-all --parallel dev:css dev:copy serve",
-    "deploy-prepare": "npm run build && git add . && git commit -m 'Update build for deploy'"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "type": "commonjs",
-  "dependencies": {
-    "body-parser": "^2.2.2",
-    "cors": "^2.8.6",
-    "express": "^5.2.1",
-    "nodemailer": "^7.0.13"
+    "tailwindcss": "^3.4.19",
+    "vite": "^7.3.1"
   }
 }
